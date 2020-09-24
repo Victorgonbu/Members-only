@@ -3,7 +3,7 @@
 
 #### Features
 - User authentication using [Devise](https://rubygems.org/gems/devise)
-- Many to relation between User and Post
+- Many to one relation between User and Post
 - Simple but elegant front-end using Bootstrap and SCSS
 - Display success/ error messages when appliable
 
