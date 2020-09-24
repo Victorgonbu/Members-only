@@ -7,6 +7,8 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <script src="https://kit.fontawesome.com/fdaa9ad399.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
   </head>
 
@@ -34,7 +36,10 @@
 
           <div class="user_navbar d-flex">
             <li class="nav-item d-flex align-items-center">
-              <span class="text-light"><%= link_to current_user.name, edit_user_registration_path %></span>
+              <%= link_to "Make a new post", new_post_path, class: "btn btn-outline-warning mx-3 no-link px-3" %>
+            </li>
+            <li class="nav-item d-flex align-items-center">
+              <%= link_to current_user.name, edit_user_registration_path, class: "text-light no-link px-3" %>
             </li>
             <li>
               <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "nav-link btn btn-outline-light mx-3 px-3" %>

@@ -15,6 +15,14 @@
           <div class="px-3">
             <p class="bg-light border-top rounded py-3"><small class="px-3 text-secondary">Posted by:</small><%= post.user.name %></p>
           </div>
+
+          <% if post.user.id == current_user.id %>
+            <div class="mb-3 ml-3">
+              <%= link_to post, method: :delete, data: { confirm: "Are you sure??" } do %>
+                <i class="fas fa-trash-alt text-dark"></i>
+              <% end %>
+            </div>
+          <% end %>
         <% end %>
     </div>
   <% end %>
