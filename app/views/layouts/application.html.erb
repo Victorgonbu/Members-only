@@ -11,28 +11,36 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <% if flash[:notice] %>
+    <div class="">
+    <p class="notice"> <%= notice %> </p>
+    </div>
+    <% end %>
 
-    <nav class="navbar">
-      <div class="d-flex justify-content-end">
+    <% if flash[:alert]%>
+    <div class="">
+    <p class="alert"> <%= alert %> </p>
+    </div>
+    <% end %>
+
+    <nav class="navbar px-5">
+      <div class="navbar-brand">
+        <p><%= link_to "Memmbers Only", root_path %></p>
+      </div>
+      <ul class="navbar-nav">
         <% if user_signed_in? %>
-          <div class="">
-            <span> <%= current_user.name %> </span>
-            <span> <%= link_to "Log Out", destroy_user_session_path, method: :delete %>  </span>
+          <div class="user_navbar d-flex">
+            <li> <%= current_user.name %>  </li>
+            <li> <%= link_to "Log Out", destroy_user_session_path, method: :delete %>  </li>
           </div>
         <% else %>
-          <div class="">
-            <span>
-              <%= link_to "Sign in", new_user_session_path %>
-            </span>
-            <span>
-              <%= link_to "Sign up", new_user_registration_path %>
-            </span>
-          </div>
+        <div class="user_navbar d-flex">
+          <li class="px-2"> <%= link_to "Sign in", new_user_session_path %> </li>
+          <li class="px-2"> <%= link_to "Sign up", new_user_registration_path %> </li>
+        </div>
+      <% end %>
+      </ul>
 
-     <% end %>
-      </div>
     </nav>
 
     <%= yield %>
