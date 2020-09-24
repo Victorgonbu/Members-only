@@ -12,33 +12,47 @@
 
   <body>
     <% if flash[:notice] %>
-    <div class="">
-    <p class="notice"> <%= notice %> </p>
-    </div>
+      <div class="w-100 alert alert-warning d-flex justify-content-center pb-0 m-0">
+        <p class="notice"> <%= notice %> </p>
+      </div>
     <% end %>
 
     <% if flash[:alert]%>
-    <div class="">
-    <p class="alert"> <%= alert %> </p>
-    </div>
+      <div class="w-100 alert alert-danger d-flex justify-content-center pb-0 m-0">
+        <p class="alert"> <%= alert %> </p>
+      </div>
     <% end %>
 
-    <nav class="navbar px-5">
-      <div class="navbar-brand">
-        <p><%= link_to "Memmbers Only", root_path %></p>
+    <nav class="navbar px-5 bg-dark">
+
+      <div class="navbar-brand pb-0">
+        <h1 class="h3"><%= link_to "Members Only", root_path, class: "navbar-logo-edit text-light" %></h1>
       </div>
+
       <ul class="navbar-nav">
         <% if user_signed_in? %>
+
           <div class="user_navbar d-flex">
-            <li> <%= current_user.name %>  </li>
-            <li> <%= link_to "Log Out", destroy_user_session_path, method: :delete %>  </li>
+            <li class="nav-item d-flex align-items-center">
+              <span class="text-light"><%= current_user.name %></span>
+            </li>
+            <li>
+              <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "nav-link btn btn-outline-light mx-3 px-3" %>
+            </li>
           </div>
+
         <% else %>
-        <div class="user_navbar d-flex">
-          <li class="px-2"> <%= link_to "Sign in", new_user_session_path %> </li>
-          <li class="px-2"> <%= link_to "Sign up", new_user_registration_path %> </li>
-        </div>
-      <% end %>
+
+          <div class="user_navbar d-flex">
+            <li class="nav-item d-flex align-items-center">
+              <span class=""><%= link_to "Sign in", new_user_session_path, class: "no-link btn btn-outline-light nav-link px-3" %></span>
+            </li>
+            <li class="px-2">
+              <%= link_to "Sign up", new_user_registration_path, class: "nav-link btn btn-light mx-3 px-3" %>
+            </li>
+          </div>
+
+        <% end %>
       </ul>
 
     </nav>
