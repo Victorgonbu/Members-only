@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="border px-3 pt-3">
+    <div class="border p-3">
+      <p><%= @post.title %></p>
+    </div>
+    <div class="border p-3">
+      <p><%= @post.content %></p>
+    </div>
+  </div>
+  <% if user_signed_in? %>
+    <div class="border px-3 pt-3">
+      <p><small class="px-3 text-secondary">Posted by:</small><%= @post.user.name %></p>
+    </div>
+  <% end %>
+</div>
