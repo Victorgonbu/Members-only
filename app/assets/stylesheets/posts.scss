@@ -6,3 +6,54 @@
 .no-link:hover {
   text-decoration: none;
 }
+
+body {
+  height: 100vh;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 2em;
+    h2 {
+      text-transform: capitalize;
+      font-size: 2.5em;
+      margin: 1em 0;
+    }
+    .button_to {
+      border: 0;
+      padding: 0;
+    }
+    form {
+     border: 2px solid #343a40;
+     padding: 2em;
+     font-size: 1.4em;
+     margin-bottom: 1em;
+
+     label {
+       margin: 1em 0;
+     }
+
+     input {
+      width: 98%;
+          }
+    input.remember_me {
+      width: auto;
+    }
+     .actions {
+       display: flex;
+       justify-content: center;
+       margin: 1em auto;
+
+       input {
+         border: 1px solid #343a40;
+         font-size: 1em;
+       }
+     }
+     .cancel-account {
+       border: 1px solid red;
+     }
+   }
+}
