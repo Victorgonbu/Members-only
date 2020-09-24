@@ -1,5 +1,5 @@
 # Members Only
-##### The objective of this project is to create an application that stores posts from registered users. People who have not logged in to the site can see the posts but not their authors. Those who log in to the app, can check the posts author's names.
+##### The objective of this project is to create an application that stores posts from registered users. People who have not logged in to the site can see the posts but not their authors. Those who log in to the app, can check the posts author's name.
 
 #### Features
 - User authentication using [Devise](https://rubygems.org/gems/devise)
