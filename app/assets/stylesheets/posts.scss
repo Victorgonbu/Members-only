@@ -31,13 +31,14 @@ body {
      padding: 2em;
      font-size: 1.4em;
      margin-bottom: 1em;
+     max-width: 30%;
 
      label {
        margin: 1em 0;
      }
 
      input {
-      width: 98%;
+      width: 100%;
           }
     input.remember_me {
       width: auto;
