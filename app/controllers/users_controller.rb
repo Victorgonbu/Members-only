@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-
   def new
     # useless method
   end
@@ -7,5 +6,4 @@ class UsersController < ApplicationController
   def create
     # useless method
   end
-
 end
