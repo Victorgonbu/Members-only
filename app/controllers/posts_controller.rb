@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, except: %i[index show]
 
   def new
-    @post = current_user.posts.build
+    @post = Post.new
   end
 
   def create
