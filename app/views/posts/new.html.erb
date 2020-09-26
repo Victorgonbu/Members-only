@@ -1,0 +1,15 @@
+<div class="container">
+
+  <h1 class="h1 my-3 text-dark">Create post</h1>
+
+  <%= form_for @post do |f| %>
+    <div class="form-group">
+      <%= f.text_field :title, class: "form-control" %>
+    </div>
+    <div class="">
+        <%= f.text_area :content, class: "form-control" %>
+    </div>
+    <%= f.submit "Post", class: "btn btn-primary mt-3 px-3" %>
+  <% end %>
+
+</div>

@@ -1,24 +1,40 @@
-# README
+# Members Only
+##### The objective of this project is to create an application that stores posts from registered users. People who have not logged in to the site can see the posts but not their authors. Those who log in to the app, can check the posts author's name.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+#### Features
+- User authentication using [Devise](https://rubygems.org/gems/devise)
+- Many to one relation between User and Post
+- Simple but elegant front-end using Bootstrap and SCSS
+- Display success/ error messages when appliable
 
-Things you may want to cover:
+#### Build with
+- [Bootstrap](https://getbootstrap.com/)
+- [Devise](https://rubygems.org/gems/devise)
+- [Rails](https://rubyonrails.org/)
+- [SCSS](https://sass-lang.com/documentation/syntax)
 
-* Ruby version
+## Authors
 
-* System dependencies
+👤 **Tadeu Sarro**
 
-* Configuration
+[Website](https://tadeuasarro.web.app/)
 
-* Database creation
+👤 **Victor Manuel Gonzalez Buitrago**
 
-* Database initialization
+- Github: [@Shaqri](https://github.com/Shaqri)
+- Twitter: [@victorgonbu](https://twitter.com/victorgonbu)
+- Linkedin: [linkedin](https://www.linkedin.com/in/victor-manuel-gonzalez-buitrago-8704731a5/)
 
-* How to run the test suite
+## 🤝 Contributing
 
-* Services (job queues, cache servers, search engines, etc.)
+Contributions, issues and feature requests are welcome!
 
-* Deployment instructions
+Feel free to check the [issues page](issues/).
 
-* ...
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## 📝 License
+
+This project is [MIT](lic.url) licensed.

@@ -7,9 +7,65 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <script src="https://kit.fontawesome.com/fdaa9ad399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
   </head>
 
   <body>
+    <% if flash[:notice] %>
+      <div class="w-100 alert alert-warning d-flex justify-content-center pb-0 m-0">
+        <p class="notice"> <%= notice %> </p>
+      </div>
+    <% end %>
+
+    <% if flash[:alert]%>
+      <div class="w-100 alert alert-danger d-flex justify-content-center pb-0 m-0">
+        <p class="alert"> <%= alert %> </p>
+      </div>
+    <% end %>
+
+    <nav class="navbar px-5 bg-dark">
+
+      <div class="navbar-brand pb-0">
+        <h1 class="h3"><%= link_to "Members Only", root_path, class: "navbar-logo-edit text-light" %></h1>
+      </div>
+
+      <ul class="navbar-nav">
+        <% if user_signed_in? %>
+
+          <div class="user_navbar d-flex">
+            <li class="nav-item d-flex align-items-center">
+              <%= link_to "Make a new post", new_post_path, class: "btn btn-outline-warning mx-3 no-link px-3" %>
+            </li>
+            <li class="nav-item d-flex align-items-center">
+              <%= link_to current_user.name, edit_user_registration_path, class: "text-light no-link px-3" %>
+            </li>
+            <li>
+              <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "nav-link btn btn-outline-light mx-3 px-3" %>
+            </li>
+          </div>
+
+        <% else %>
+
+          <div class="user_navbar d-flex">
+            <li class="nav-item d-flex align-items-center">
+              <span class=""><%= link_to "Sign in", new_user_session_path, class: "no-link btn btn-outline-light nav-link px-3" %></span>
+            </li>
+            <li class="px-2">
+              <%= link_to "Sign up", new_user_registration_path, class: "nav-link btn btn-light mx-3 px-3" %>
+            </li>
+          </div>
+
+        <% end %>
+      </ul>
+
+    </nav>
+
     <%= yield %>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
   </body>
 </html>
